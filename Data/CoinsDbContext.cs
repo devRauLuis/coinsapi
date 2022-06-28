@@ -1,15 +1,15 @@
+using coinsapi.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 
-namespace coinsapi.Models
-{
-    public class CoinsDbContext : DbContext
-    {
-        public TodoContext(DbContextOptions<CoinsContext> options)
-            : base(options)
-        {
-        }
+namespace coinsapi.Data;
 
-        public DbSet<Coin> Coins { get; set; } = null!;
+public class CoinsDbContext : DbContext
+{
+    public CoinsDbContext(DbContextOptions<CoinsDbContext> options)
+        : base(options)
+    {
     }
+
+    public DbSet<Coin> Coins { get; set; } = null!;
 }
